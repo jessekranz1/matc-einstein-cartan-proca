@@ -1,25 +1,29 @@
-# MATC: Reduced Einstein–Cartan–Proca Cosmology
+# MATC v16.9
 
-This repository contains the LaTeX source and manuscript for a reduced Einstein–Cartan–Proca effective field theory (EFT) model investigating nonsingular Bianchi-IX cosmology.
+Reduced Einstein–Cartan–Proca EFT for nonsingular Bianchi-IX cosmology.
 
-The framework explores whether a propagating axial-vector torsion sector can dynamically suppress BKL/Mixmaster anisotropies while maintaining perturbative hyperbolicity.
+## Repository Goals
+
+- derive reduced Einstein–Cartan–Proca equations
+- test nonlinear suppression of BKL anisotropy
+- analyze hyperbolicity conditions
+- build reproducible minisuperspace numerics
 
 ## Current Status
 
-- Reduced minisuperspace formulation completed
-- Constraint analysis completed
-- Stability-island framework defined
-- Numerical integration program proposed
-- Full numerical verification pending
+| Component | Status |
+|---|---|
+| EFT Action | Complete |
+| Constraint Analysis | Complete |
+| Principal Symbol | Reduced-form |
+| RK4 Integration | In progress |
+| Full 3+1 PDE Analysis | Open |
 
-## Research Focus
+## Disclaimer
 
-- Einstein–Cartan gravity
-- Generalized Proca systems
-- Bianchi-IX cosmology
-- Hyperbolic PDE structure
-- Nonsingular cosmology
-- Numerical relativity
+This repository presents a reduced effective field theory model.
+The framework is not proposed as a UV-complete theory of gravity.
+Full nonlinear stability and observational consistency remain open problems.- Numerical relativity
 
 ## Disclaimer
 
