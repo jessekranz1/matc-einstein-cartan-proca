@@ -1,0 +1,320 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{physics}
+
+\title{MATC v16.9\\
+A Reduced Einstein--Cartan--Proca Effective Theory\\
+for Nonsingular Bianchi-IX Cosmology}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We investigate a reduced Einstein--Cartan--Proca (ECP) effective field theory describing a propagating axial-torsion sector coupled to a contracting Bianchi-IX cosmology. The framework is formulated as a metric-affine effective theory in which the irreducible axial component of torsion behaves as a massive pseudovector field with parity-violating derivative interactions. The primary objective is not the construction of an exact isotropic bounce, but the suppression of chaotic Belinskii--Khalatnikov--Lifshitz (BKL) oscillations through nonlinear axial backreaction.
+\end{abstract}
+
+\section{Introduction}
+
+The problem of anisotropic instability remains one of the central obstacles facing nonsingular cosmology. In contracting spacetimes, anisotropic shear generically scales as
+
+\[
+\sigma^2 \propto a^{-6}
+\]
+
+leading to Mixmaster instability characteristic of BKL evolution.
+
+This work investigates whether a propagating axial component of spacetime torsion may dynamically absorb anisotropic energy during contraction.
+
+\section{Effective Einstein--Cartan--Proca Construction}
+
+\subsection{Metric-Affine Origin}
+
+The torsion tensor is defined by
+
+\[
+T^\lambda_{\mu\nu}
+=
+\Gamma^\lambda_{\mu\nu}
+-
+\Gamma^\lambda_{\nu\mu}
+\]
+
+The propagating degree of freedom retained in the EFT is the axial pseudovector
+
+\[
+A^\mu
+=
+\frac{1}{6}
+\epsilon^{\mu\nu\rho\sigma}
+T_{\nu\rho\sigma}
+\]
+
+\subsection{Effective Action}
+
+The reduced action is
+
+\[
+S
+=
+\int d^4x \sqrt{-g}
+\left[
+\frac{M_{Pl}^2}{2}R
+-\frac14 F_{\mu\nu}F^{\mu\nu}
++\frac12 M_A^2 A_\mu A^\mu
+-\frac12 (\partial\phi)^2
+-V(\phi)
++\frac{\alpha}{M_*}\phi F_{\mu\nu}\tilde F^{\mu\nu}
+\right]
+\]
+
+with
+
+\[
+F_{\mu\nu}
+=
+\nabla_\mu A_\nu
+-
+\nabla_\nu A_\mu
+\]
+
+and
+
+\[
+\tilde F^{\mu\nu}
+=
+\frac12
+\epsilon^{\mu\nu\rho\sigma}
+F_{\rho\sigma}
+\]
+
+\section{Constraint Structure and Degrees of Freedom}
+
+The total propagating count is:
+
+\begin{itemize}
+\item 2 tensor gravitational modes,
+\item 3 Proca modes,
+\item 1 scalar mode.
+\end{itemize}
+
+The canonical momentum conjugate to \(A_0\) vanishes:
+
+\[
+\pi^0 \approx 0
+\]
+
+Consistency generates the secondary constraint
+
+\[
+\partial_i \pi^i + M_A^2 A_0 \approx 0
+\]
+
+which fixes \(A_0\) algebraically.
+
+\section{Covariant Energy Transfer Mechanism}
+
+Variation with respect to \(A_\mu\) yields
+
+\[
+\nabla_\nu F^{\nu\mu}
++
+M_A^2 A^\mu
+=
+-
+\frac{2\alpha}{M_*}
+\tilde F^{\mu\nu}
+\partial_\nu \phi
+\]
+
+In a homogeneous cosmological background,
+
+\[
+\partial_\nu \phi = (\dot\phi,0,0,0)
+\]
+
+so only \(\tilde F^{\mu 0}\) contributes dynamically.
+
+\subsection{Bianchi-IX Curvature Source}
+
+The vector field is expanded in the invariant Bianchi-IX basis
+
+\[
+A = A_i(t)\omega^i
+\]
+
+where the Maurer--Cartan one-forms satisfy
+
+\[
+d\omega^i
+=
+-\frac12
+C^i_{jk}
+\omega^j \wedge \omega^k
+\]
+
+Consequently,
+
+\[
+F\tilde F \neq 0
+\]
+
+even in a homogeneous truncation.
+
+\section{Nonlinear Damping and Scaling Behavior}
+
+The interaction term modifies the continuity equation and may produce enhanced scaling:
+
+\[
+\rho_A \propto a^{-(6+\delta)}
+\]
+
+with
+
+\[
+\delta > 0
+\]
+
+emerging dynamically from scalar-to-axial energy transfer.
+
+The viable region in parameter space is bounded by
+
+\[
+\alpha_c < \alpha < \alpha_{\max}
+\]
+
+where under-coupling fails to suppress BKL growth and over-coupling destabilizes the PDE structure.
+
+\section{Hyperbolicity and Principal Symbol Analysis}
+
+The most dangerous instability occurs in the longitudinal Proca mode. In the high-frequency WKB limit,
+
+\[
+v_L^2
+\sim
+1
+-
+\frac{\alpha^2 \dot\phi^2}
+{M_*^2 M_A^2}
+\]
+
+Strong hyperbolicity requires
+
+\[
+v_L^2 > 0
+\]
+
+throughout the evolution.
+
+\section{Numerical Program}
+
+The reduced minisuperspace system evolves
+
+\[
+\mathbf U
+=
+(\Omega,\beta_+,\beta_-,A_i,\dot A_i,\phi,\dot\phi)
+\]
+
+using a fourth-order Runge--Kutta integrator.
+
+\subsection{Constraint-Preserving Initialization}
+
+Initial data satisfy
+
+\[
+\Omega_A(t_0) \ll 1
+\]
+
+with representative scales
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Typical Scale \\
+\midrule
+$A_i(t_0)$ & $10^{-8} - 10^{-6} M_{Pl}$ \\
+$\dot A_i(t_0)$ & $10^{-8} - 10^{-6} M_{Pl}^2$ \\
+$\Omega_{shear}(t_0)$ & $0.8 - 0.95$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Adiabatic Coupling Activation}
+
+To reduce numerical stiffness,
+
+\[
+\alpha_{\mathrm{eff}}(t)
+=
+\alpha
+\left(
+1-e^{-(|H|/H_c)^n}
+\right)
+\]
+
+with \(n \sim 2\).
+
+\section{Numerical Diagnostics}
+
+The numerical program succeeds only if:
+
+\begin{enumerate}
+\item BKL oscillations are suppressed,
+\item enhanced scaling satisfies
+\[
+-\frac{d\ln\rho_A}{d\ln a} > 6
+\]
+\item the Hamiltonian residual
+\[
+\mathcal R_H
+=
+\left|
+\frac{3H^2-\rho_{tot}}{\rho_{tot}}
+\right|
+\]
+remains below \(10^{-6}\),
+\item the Kretschmann scalar remains finite.
+\end{enumerate}
+
+\section{Failure Modes and Falsifiability}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Failure Regime & Diagnostic & Interpretation \\
+\midrule
+Under-coupled & $\delta \le 0$ & BKL collapse resumes \\
+Over-coupled & $v_L^2 < 0$ & Hyperbolicity breakdown \\
+EFT Breakdown & Higher operators dominate & EFT invalid \\
+Constraint Failure & $\mathcal R_H \gg 10^{-6}$ & Numerical inconsistency \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+We have presented a reduced Einstein--Cartan--Proca effective theory describing a propagating axial-torsion sector coupled to a contracting Bianchi-IX cosmology.
+
+The proposal stands or falls entirely on computational verification.
+
+If the reduced evolution system demonstrates:
+
+\begin{itemize}
+\item enhanced axial scaling,
+\item bounded anisotropy,
+\item preserved Hamiltonian constraints,
+\item finite curvature,
+\end{itemize}
+
+then the framework constitutes a technically viable nonsingular modified-gravity EFT.
+
+\end{document}
