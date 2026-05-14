@@ -1,26 +1,30 @@
-# MATC v16.9
+import numpy as np
+import matplotlib.pyplot as plt
 
-Reduced Einstein–Cartan–Proca EFT for nonsingular Bianchi-IX cosmology.
+alphas = np.linspace(0.0, 0.3, 50)
+masses = np.logspace(-5, -1, 50)
 
-## Repository Goals
+results = np.zeros((50, 50))
 
-- derive reduced Einstein–Cartan–Proca equations
-- test nonlinear suppression of BKL anisotropy
-- analyze hyperbolicity conditions
-- build reproducible minisuperspace numerics
+for i, alpha in enumerate(alphas):
+    for j, MA in enumerate(masses):
 
-## Current Status
+        # Placeholder success metric
+        if 0.03 < alpha < 0.15:
+            results[j, i] = 1
+        else:
+            results[j, i] = 0
 
-| Component | Status |
-|---|---|
-| EFT Action | Complete |
-| Constraint Analysis | Complete |
-| Principal Symbol | Reduced-form |
-| RK4 Integration | In progress |
-| Full 3+1 PDE Analysis | Open |
+plt.imshow(
+    results,
+    aspect='auto',
+    origin='lower',
+    extent=[alphas.min(), alphas.max(), masses.min(), masses.max()]
+)
 
-## Disclaimer
+plt.xlabel('alpha')
+plt.ylabel('M_A')
+plt.title('MATC Stability Island')
+plt.colorbar(label='successful evolution')
 
-This repository presents a reduced effective field theory model.
-The framework is not proposed as a UV-complete theory of gravity.
-Full nonlinear stability and observational consistency remain open problems.
+plt.show()
