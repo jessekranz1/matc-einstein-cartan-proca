@@ -1,0 +1,67 @@
+\section{Reduced Minisuperspace Evolution System}
+
+We evolve the reduced Bianchi-IX state vector:
+
+\begin{equation}
+\mathbf U =
+(\Omega,\beta_+,\beta_-,A,\dot A,\phi,\dot\phi)
+\end{equation}
+
+using fourth-order Runge--Kutta integration.
+
+The anisotropy equations are:
+
+\begin{equation}
+\ddot\beta_\pm + 3H\dot\beta_\pm + \frac{\partial V_{IX}}{\partial \beta_\pm} = \Pi_\pm^{(A)}
+\end{equation}
+
+where:
+
+\begin{equation}
+\Pi_\pm^{(A)}
+\end{equation}
+
+is the axial-vector anisotropic stress.
+
+The axial-vector evolution equation is:
+
+\begin{equation}
+\ddot A + 3H\dot A + M_A^2 A
+=
+S_A
+\end{equation}
+
+with source:
+
+\begin{equation}
+S_A
+\propto
+-\frac{2\alpha}{M_*}
+\tilde F^{\mu 0}\dot\phi
+\end{equation}
+
+The scalar equation is:
+
+\begin{equation}
+\ddot\phi + 3H\dot\phi + V'(\phi)
+=
+-\frac{\alpha}{M_*}F\tilde F
+\end{equation}
+
+The Hamiltonian residual is monitored using:
+
+\begin{equation}
+\mathcal R_H
+=
+\left|
+1 - \frac{\rho_{total}}{3H^2}
+\right|
+\end{equation}
+
+A successful numerical evolution satisfies:
+
+\begin{equation}
+\mathcal R_H < 10^{-6}
+\end{equation}
+
+throughout the nonsingular transition.
